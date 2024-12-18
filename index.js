@@ -46,6 +46,7 @@ app.get("/api/upload", (req, res) => {
 });
 
 app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
+  console.log("Auth info:", req.auth);
   const userId = req.auth.userId;
   const { text } = req.body;
 
@@ -97,6 +98,7 @@ app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
 });
 
 app.get("/api/userchats", ClerkExpressRequireAuth(), async (req, res) => {
+  console.log("Auth info:", req.auth);
   const userId = req.auth.userId;
 
   try {
